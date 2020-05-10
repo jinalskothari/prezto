@@ -6,8 +6,19 @@
 #
 
 # Source Prezto.
+export VISUAL="code --wait"
+export EDITOR="$VISUAL"
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
 # Customize to your needs...
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/transfer.sh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto/transfer.sh"
+fi
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
+# export PATH="/usr/local/opt/node@8/bin:$PATH"
