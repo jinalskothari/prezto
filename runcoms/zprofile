@@ -41,9 +41,9 @@ typeset -gU cdpath fpath mailpath path
 #   $cdpath
 # )
 
-#Go Path
-#https://github.com/golang/go/wiki/GOPATH
- $GOPATH = /Users/jinal/go
+# Go Path
+# https://github.com/golang/go/wiki/GOPATH
+export GOPATH=/Users/jinal/go
 
 # Set the list of directories that Zsh searches for programs.
 path=(
