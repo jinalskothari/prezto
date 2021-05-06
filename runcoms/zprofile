@@ -18,7 +18,7 @@ fi
 #
 
 export EDITOR='nano'
-export VISUAL='nano'
+export VISUAL='code'
 export PAGER='less'
 
 #
@@ -44,17 +44,18 @@ typeset -gU cdpath fpath mailpath path
 # Go Path
 # https://github.com/golang/go/wiki/GOPATH
 export GOPATH=/Users/jinal/go
+export LIBPQ_PATH="/usr/local/opt/libpq/bin"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export GRADLE_HOME=/usr/local/Cellar/gradle/6.4.1/
+export JAVA_HOME=/usr/local/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home
 
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
   $path
 )
-export LIBPQ_PATH="/usr/local/opt/libpq/bin"
 
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export ANDROID_SDK_ROOT=$ANDROID_HOME
-export GRADLE_HOME=/usr/local/Cellar/gradle/6.4.1/
 export PATH=$PATH:$GRADLE_HOME/bin
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -63,7 +64,15 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$HOME/flutter/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$LIBPQ_PATH
+export PATH=$PATH:~/utils
+# >>> coursier install directory >>>
+export PATH="$PATH:/Users/jinal/Library/Application Support/Coursier/bin"
+# <<< coursier install directory <<<
 # export PATH=$PATH:/Volumes/JinalData/flutter/bin
+
+# Google Cloud SDK zsh completions
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 # Alias to source quesmed scripts
 alias source_quesmed="source /Volumes/JinalData/Projects/quesmed-scripts/local_helper.sh"
@@ -82,3 +91,4 @@ export LESS='-F -g -i -M -R -S -w -X -z-4'
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
+
