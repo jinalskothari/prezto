@@ -18,7 +18,8 @@ fi
 #
 # Initialization
 #
-
+_FASD_FUZZY=3
+# clean cache by `rm ~/.cache/prezto/fasd-cache.zsh`
 cache_file="${XDG_CACHE_HOME:-$HOME/.cache}/prezto/fasd-cache.zsh"
 if [[ "${commands[fasd]}" -nt "$cache_file" \
       || "${ZDOTDIR:-$HOME}/.zpreztorc" -nt "$cache_file" \
@@ -28,7 +29,7 @@ if [[ "${commands[fasd]}" -nt "$cache_file" \
 
   # Set fasd completion init arguments, if applicable.
   if zstyle -t ':prezto:module:completion' loaded; then
-    init_args+=(zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)
+    init_args+=(zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install posix-alias)
   fi
 
   mkdir -p "$cache_file:h"
@@ -40,18 +41,19 @@ source "$cache_file"
 
 unset cache_file init_args
 
-function fasd_cd {
-  local fasd_ret="$(fasd -d "$@")"
-  if [[ -d "$fasd_ret" ]]; then
-    cd "$fasd_ret"
-  else
-    print "$fasd_ret"
-  fi
-}
+
+# function fasd_cd {
+#   local fasd_ret="$(fasd -d "$@")"
+#   if [[ -d "$fasd_ret" ]]; then
+#     cd "$fasd_ret"
+#   else
+#     print "$fasd_ret"
+#   fi
+# }
 
 #
 # Aliases
 #
 
 # Changes the current working directory interactively.
-alias j='fasd_cd -i'
+# alias j='fasd_cd -i'
