@@ -14,7 +14,7 @@ fi
 
 # Alias to source quesmed scripts
 alias source_quesmed="source /Volumes/JinalData/Projects/quesmed/quesmed-scripts/local_helper.sh"
-alias edit_prezto="code ~/.zprezto/ ~/.zprezto/runcoms/zshrc"
+alias edit_prezto="code ~/.zprezto/ ~/.zprezto/runcoms/zshenv ~/.zprezto/runcoms/zprofile ~/.zprezto/runcoms/zshrc ~/.zprezto/runcoms/README.md"
 function iterm() {
   open -a iTerm .
 }
