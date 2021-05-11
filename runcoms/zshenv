@@ -21,8 +21,8 @@ export JAVA_HOME=/usr/local/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home
 export CARGO_HOME=$HOME/.cargo
 export LDFLAGS="-L/usr/local/opt/libffi/lib"
 export CPPFLAGS="-I/usr/local/opt/libffi/include"
-export PYENV_ROOT="$HOME/.pyenv"
 export USE_PYENV=0
+
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
@@ -39,7 +39,10 @@ export PATH=$PATH:$HOME/flutter/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$LIBPQ_PATH
 export PATH=$PATH:$HOME/utils/bin
-export PATH="$PYENV_ROOT/bin:$PATH"
+if [[ $USE_PYENV == 1 ]]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+fi
 
 # >>> coursier install directory >>>
 export PATH="$PATH:/Users/jinal/Library/Application Support/Coursier/bin"
