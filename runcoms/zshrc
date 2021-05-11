@@ -16,9 +16,7 @@ fi
 alias source_quesmed="source /Volumes/JinalData/Projects/quesmed/quesmed-scripts/local_helper.sh"
 alias edit_prezto="code ~/.zprezto/ ~/.zprezto/runcoms/zshrc"
 function iterm() {
-  folder="."
-  echo $folder
-  open -a iTerm $folder
+  open -a iTerm .
 }
 alias python="/usr/bin/env python3"
 alias pip="/usr/bin/env pip3"
