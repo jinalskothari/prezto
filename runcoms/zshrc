@@ -23,6 +23,10 @@ function iterm() {
 alias python="/usr/bin/env python3"
 alias pip="/usr/bin/env pip3"
 
+# Load pyenv automatically by appending
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # Customize to your needs...
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/custom/transfer.sh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/custom/transfer.sh"
