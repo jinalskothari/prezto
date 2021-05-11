@@ -2,4 +2,5 @@
 *.zwc.old
 modules/*/cache.zsh
 contrib
-.vscode
+.vscode/**
+!.vscode/settings.json
