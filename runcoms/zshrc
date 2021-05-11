@@ -18,12 +18,15 @@ alias edit_prezto="code ~/.zprezto/ ~/.zprezto/runcoms/zshrc"
 function iterm() {
   open -a iTerm .
 }
-alias python="/usr/bin/env python3"
-alias pip="/usr/bin/env pip3"
 
 # Load pyenv automatically by appending
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if [[ $USE_PYENV == 1 ]]; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+else
+  alias python="/usr/bin/env python3"
+  alias pip="/usr/bin/env pip3"
+fi
 
 # Customize to your needs...
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/custom/transfer.sh" ]]; then

@@ -22,6 +22,7 @@ export CARGO_HOME=$HOME/.cargo
 export LDFLAGS="-L/usr/local/opt/libffi/lib"
 export CPPFLAGS="-I/usr/local/opt/libffi/include"
 export PYENV_ROOT="$HOME/.pyenv"
+export USE_PYENV=0
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
