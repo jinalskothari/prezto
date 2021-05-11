@@ -16,6 +16,8 @@ fi
 alias source_quesmed="source /Volumes/JinalData/Projects/quesmed/quesmed-scripts/local_helper.sh"
 alias edit_prezto="code ~/.zprezto/ ~/.zprezto/runcoms/zprofile"
 alias iterm="open -a iTerm"
+alias python="/usr/bin/env python3"
+alias pip="/usr/bin/env pip3"
 
 # Customize to your needs...
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/transfer.sh" ]]; then
