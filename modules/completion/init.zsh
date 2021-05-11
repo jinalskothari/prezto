@@ -12,9 +12,7 @@ if [[ "$TERM" == 'dumb' ]]; then
 fi
 
 # Add zsh-completions to $fpath.
-echo "I AM HERE"
 fpath=("${0:h}/external/src" "${0:h}/user" $fpath)
-echo $fpath
 # Add completion for keg-only brewed curl when available.
 if (( $+commands[brew] && ! $+functions[_curl] )) && \
       [[ -d "${curl_prefix::="$(brew --prefix curl 2> /dev/null)"}" ]]; then
