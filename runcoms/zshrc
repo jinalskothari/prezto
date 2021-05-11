@@ -14,14 +14,18 @@ fi
 
 # Alias to source quesmed scripts
 alias source_quesmed="source /Volumes/JinalData/Projects/quesmed/quesmed-scripts/local_helper.sh"
-alias edit_prezto="code ~/.zprezto/ ~/.zprezto/runcoms/zprofile"
-alias iterm="open -a iTerm"
+alias edit_prezto="code ~/.zprezto/ ~/.zprezto/runcoms/zshrc"
+function iterm() {
+  folder="."
+  echo $folder
+  open -a iTerm $folder
+}
 alias python="/usr/bin/env python3"
 alias pip="/usr/bin/env pip3"
 
 # Customize to your needs...
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/transfer.sh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/transfer.sh"
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/custom/transfer.sh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/custom/transfer.sh"
 fi
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
