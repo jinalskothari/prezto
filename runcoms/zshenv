@@ -19,6 +19,7 @@ export ANDROID_SDK_ROOT=$ANDROID_HOME
 export GRADLE_HOME=/usr/local/Cellar/gradle/6.4.1/
 export JAVA_HOME=/usr/local/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home
 export CARGO_HOME=$HOME/.cargo
+export GOOG_CLOUD_HOME="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk"
 export LDFLAGS="-L/usr/local/opt/libffi/lib"
 export CPPFLAGS="-I/usr/local/opt/libffi/include"
 export USE_PYENV=0
@@ -28,6 +29,7 @@ path=(
   /usr/local/{bin,sbin}
   $path
 )
+export PATH=$GOOG_CLOUD_HOME/bin:$PATH
 export PATH=$CARGO_HOME/bin:$PATH
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 export PATH=$PATH:$GRADLE_HOME/bin
