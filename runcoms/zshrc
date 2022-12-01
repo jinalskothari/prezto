@@ -19,21 +19,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Alias to source quesmed scripts
-alias source_quesmed="source /Volumes/JinalData/Projects/quesmed/quesmed-scripts/local_helper.sh"
 alias edit_prezto="code ~/.zprezto/ ~/.zprezto/runcoms/zshenv ~/.zprezto/runcoms/zprofile ~/.zprezto/runcoms/zshrc ~/.zprezto/runcoms/README.md"
 function iterm() {
   open -a iTerm .
 }
-
-# Load pyenv automatically by appending
-if [[ $USE_PYENV == 1 ]]; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-else
-  alias python="/usr/bin/env python3"
-  alias pip="/usr/bin/env pip3"
-fi
 
 # Customize to your needs...
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/custom/transfer.sh" ]]; then
