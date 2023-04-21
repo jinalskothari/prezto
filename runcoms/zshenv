@@ -49,3 +49,4 @@ fi
 # >>> coursier install directory >>>
 export PATH="$PATH:/Users/jinal/Library/Application Support/Coursier/bin"
 # <<< coursier install directory <<<
+. "$HOME/.cargo/env"
