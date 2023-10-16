@@ -4,3 +4,4 @@ modules/*/cache.zsh
 contrib
 .vscode/**
 !.vscode/settings.json
+.DS_Store
