@@ -1,15 +1,11 @@
 #
 # Defines environment variables.
 #
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
 
-# Ensure that a non-login, non-interactive shell has a defined environment.
-if [[ ("$SHLVL" -eq 1 && ! -o LOGIN) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprofile"
-fi
-
+export VISUAL="code --wait"
+export EDITOR="$VISUAL"
+export PAGER='less'
+export LANG='en_US.UTF-8'
 # Go Path
 # https://github.com/golang/go/wiki/GOPATH
 export GOPATH=/Users/jinal/go
@@ -22,13 +18,19 @@ export CARGO_HOME=$HOME/.cargo
 export GOOG_CLOUD_HOME="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk"
 export LDFLAGS="-L/usr/local/opt/libffi/lib"
 export CPPFLAGS="-I/usr/local/opt/libffi/include"
-export USE_PYENV=0
 
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
   $path
 )
+path=(
+  $HOME/{,s}bin(N)
+  /opt/{homebrew,local}/{,s}bin(N)
+  /usr/local/{,s}bin(N)
+  $path
+)
+
 export PATH=$GOOG_CLOUD_HOME/bin:$PATH
 export PATH=$CARGO_HOME/bin:$PATH
 export PATH="/usr/local/opt/llvm/bin:$PATH"
