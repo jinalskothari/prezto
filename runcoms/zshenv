@@ -6,6 +6,59 @@
 #
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
-if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+if [[ ("$SHLVL" -eq 1 && ! -o LOGIN) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+# jinal's customizations
+
+export VISUAL="code --wait"
+export EDITOR="$VISUAL"
+export PAGER='less'
+export LANG='en_US.UTF-8'
+# Go Path
+# https://github.com/golang/go/wiki/GOPATH
+export GOPATH=/Users/jinal/go
+export LIBPQ_PATH="/usr/local/opt/libpq/bin"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export GRADLE_HOME=/usr/local/Cellar/gradle/6.4.1/
+export JAVA_HOME=/usr/local/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home
+export CARGO_HOME=$HOME/.cargo
+export GOOG_CLOUD_HOME="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk"
+export LDFLAGS="-L/usr/local/opt/libffi/lib"
+export CPPFLAGS="-I/usr/local/opt/libffi/include"
+
+# Set the list of directories that Zsh searches for programs.
+path=(
+  /usr/local/{bin,sbin}
+  $path
+)
+path=(
+  $HOME/{,s}bin(N)
+  /opt/{homebrew,local}/{,s}bin(N)
+  /usr/local/{,s}bin(N)
+  $path
+)
+
+export PATH=$GOOG_CLOUD_HOME/bin:$PATH
+export PATH=$CARGO_HOME/bin:$PATH
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export PATH=$PATH:$GRADLE_HOME/bin
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$HOME/flutter/bin
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$LIBPQ_PATH
+export PATH=$PATH:$HOME/utils/bin
+if [[ $USE_PYENV == 1 ]]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+fi
+
+# >>> coursier install directory >>>
+export PATH="$PATH:/Users/jinal/Library/Application Support/Coursier/bin"
+# <<< coursier install directory <<<
+. "$HOME/.cargo/env"

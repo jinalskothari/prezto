@@ -10,4 +10,15 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+# Jinal's customizations
+
+alias edit_prezto="code ~/.zprezto/ ~/.zprezto/runcoms/zshenv ~/.zprezto/runcoms/zprofile ~/.zprezto/runcoms/zshrc ~/.zprezto/runcoms/README.md"
+function iterm() {
+  open -a iTerm .
+}
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
