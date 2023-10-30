@@ -17,8 +17,25 @@ function iterm() {
   open -a iTerm .
 }
 
+# Pushes repo to Bitcraft gitlab which in turn creates a new project
+# $1 can be top level [PROJECT_NAME] or [SUBGROUP/PROJECT_NAME]
+function gitlab_new_push() {
+  url=git@gitlab.com:bitcraftin/$1.git
+  current_branch=$(git rev-parse --abbrev-ref HEAD | tr -d '\n')
+  git push --set-upstream $url $current_branch
+  git remote add origin $url
+}
+
+function pwdcp() {
+  pwd | tr -d '\n' | pbcopy
+  echo "Current working directory copied to clipboard without trailing newline!"
+}
+
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
+#kubectl completions
+source <(kubectl completion zsh)
 # Starship prompt
 eval "$(starship init zsh)"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
