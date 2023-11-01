@@ -12,7 +12,7 @@ fi
 
 # Jinal's customizations
 
-alias edit_prezto="code ~/.zprezto/ ~/.zprezto/runcoms/zshenv ~/.zprezto/runcoms/zprofile ~/.zprezto/runcoms/zshrc ~/.zprezto/runcoms/README.md"
+alias edit_prezto="code ~/.zprezto/ ~/.zprezto/runcoms/zshrc ~/.zprezto/runcoms/zshenv ~/.zprezto/runcoms/zprofile ~/.zprezto/runcoms/README.md"
 function iterm() {
   open -a iTerm .
 }
