@@ -39,3 +39,6 @@ source <(kubectl completion zsh)
 # Starship prompt
 eval "$(starship init zsh)"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# prezto uses fasd_cd with a useful j alias, but i want it use it as z
+alias z=j
