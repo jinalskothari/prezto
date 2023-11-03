@@ -22,8 +22,12 @@ function iterm() {
 function gitlab_new_push() {
   url=git@gitlab.com:bitcraftin/$1.git
   current_branch=$(git rev-parse --abbrev-ref HEAD | tr -d '\n')
-  git push --set-upstream $url $current_branch
-  git remote add origin $url
+  if git remote | grep -q "origin"; then
+    git remote set-url origin $url
+  else
+    git remote add origin $url
+  fi
+  git push --set-upstream origin $current_branch
 }
 
 function pwdcp() {
