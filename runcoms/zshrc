@@ -11,7 +11,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Jinal's customizations
-
+export YABAIRC=~/.config/yabai/yabairc
+export SKHDRC=~/.config/skhd/skhdrc
+alias edit_yabai="code $YABAIRC $SKHDRC"
+alias reload_yabai="source $YABAIRC"
 alias edit_prezto="code ~/.zprezto/ ~/.zprezto/runcoms/zshrc ~/.zprezto/runcoms/zshenv ~/.zprezto/runcoms/zprofile ~/.zprezto/runcoms/README.md"
 function iterm() {
   open -a iTerm .
