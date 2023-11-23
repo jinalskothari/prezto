@@ -10,6 +10,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Integrate new system of desktop utils
+source /Users/kalki/desktop-utils/jinal/integrate.sh
+# End Desktop Utils Integration
+
 # Jinal's customizations
 export YABAIRC=~/.config/yabai/yabairc
 export SKHDRC=~/.config/skhd/skhdrc
@@ -42,7 +46,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 #kubectl completions
-source <(kubectl completion zsh)
+#source <(kubectl completion zsh)
 # Starship prompt
 eval "$(starship init zsh)"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
