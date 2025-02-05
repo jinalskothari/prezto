@@ -12,3 +12,5 @@ fi
 
 # Customize to your needs...
 . "/Users/jinal/.deno/env"
+alias a="aichat"
+alias e="aichat -e"
